@@ -4,7 +4,10 @@
   "description": "",
   "main": "lib/index.js",
   "scripts": {
-    "build:babel": "babel src/ --out-dir lib/ --minified --source-maps inline"
+    "build": "run-s build:*",
+    "build:babel": "babel src/ --out-dir lib/ --minified --source-maps inline",
+    "test": "run-s test:*",
+    "test:standard": "standard"
   },
   "keywords": [
     "react",
@@ -16,6 +19,13 @@
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-es2017": "^6.24.1",
-    "babel-preset-react": "^6.24.1"
+    "babel-preset-react": "^6.24.1",
+    "npm-run-all": "^4.1.2",
+    "standard": "^10.0.3"
+  },
+  "standard": {
+    "ignore": [
+      "/lib"
+    ]
   }
 }
