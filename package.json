@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:babel": "babel src/ --out-dir build/ --minified --source-maps inline"
+    "build:babel": "babel src/ --out-dir lib/ --minified --source-maps inline"
   },
   "keywords": [
     "react",
