@@ -9,18 +9,6 @@ React Components for improving readability by eliminating { }, && and ternary op
 
 ## Usage
 
-register conditions
-
-```js
-import {When} from 'react-display-switch'
-
-When.case('screen-xs', () => window.innerWidth < 768)
-When.case('screen-md', () => !When.case('screen-xs') && window.innerWidth < 992)
-When.case('screen-lg', () => window.innerWidth >= 992)
-When.case('admin-user', () => user.admin === true)
-When.case('enable-google-analytics', () => ENABLE_GOOGLE_ANALYTICS)
-```
-
 When condition
 
 ```js
@@ -40,3 +28,19 @@ and
   <a href='./google-analytics-settings'>google analytics settings</a>
 </When>
 ```
+
+### register conditions
+
+```js
+import {When} from 'react-display-switch'
+
+When.case('screen-xs', () => window.innerWidth < 768)
+When.case('screen-md', () => !When.case('screen-xs') && window.innerWidth < 992)
+When.case('screen-lg', () => window.innerWidth >= 992)
+When.case('admin-user', () => user.admin === true)
+When.case('enable-google-analytics', () => process.env.ENABLE_GOOGLE_ANALYTICS)
+```
+
+## Sample
+
+see [./sample](https://github.com/shokai/react-display-switch/tree/master/sample)
