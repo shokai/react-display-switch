@@ -6,3 +6,4 @@ node_modules/
 *.log.*
 lib/
 tmp/
+*.bundle.js
