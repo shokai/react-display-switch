@@ -17,7 +17,7 @@ import {When} from 'react-display-switch'
 When.case('screen-xs', () => window.innerWidth < 768)
 When.case('screen-md', () => !When.case('screen-xs') && window.innerWidth < 992)
 When.case('screen-lg', () => window.innerWidth >= 992)
-When.case('admin-user', () => user.admin)
+When.case('admin-user', () => user.admin === true)
 When.case('enable-google-analytics', () => ENABLE_GOOGLE_ANALYTICS)
 ```
 
