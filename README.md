@@ -21,10 +21,16 @@ When.case('admin-user', () => user.admin)
 When.case('enable-google-analytics', () => ENABLE_GOOGLE_ANALYTICS)
 ```
 
-`<When condition>`
+When condition
 
 ```js
 <When screen-xs>contents for small screen</When>
+```
+
+or
+
+```js
+<When screen-md or screen-lg>contents for medium or large screen</When>
 ```
 
 and
@@ -33,10 +39,4 @@ and
 <When admin-user and enable-google-analytics>
   <a href='./google-analytics-settings'>google analytics settings</a>
 </When>
-```
-
-or
-
-```js
-<When screen-md or screen-lg>contents for medium or large screen</When>
 ```
