@@ -1,5 +1,5 @@
 const reservedWords = ['children', 'or', 'and']
-const filterCaseLabel = arr => arr.filter(i => !reservedWords.includes(i))
+export const filterCaseLabel = arr => arr.filter(i => !reservedWords.includes(i))
 
 export const When = (props) => {
   if (props.and && props.or) throw new Error('must not use "and" with "or".')
