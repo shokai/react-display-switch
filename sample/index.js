@@ -19,9 +19,8 @@ const App = () => (
   <div>
     <h1>react-display-switch</h1>
     <p>
-      <When screen-xs>screen size is XS</When>
-      <When screen-md>screen size is MD</When>
-      <When screen-lg>screen size is LG</When>
+      <When screen-xs>contents for small screen</When>
+      <When screen-md or screen-lg>contents for medium or large screen</When>
     </p>
     <When admin-user and enable-google-analytics>
       <p>
