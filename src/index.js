@@ -1,2 +1,3 @@
-module.exports = {}
-module.exports.When = require('./main').When
+import {When} from './when'
+
+module.exports = { When }
