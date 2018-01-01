@@ -7,11 +7,12 @@ export const When = (props) => {
   if (labels.length > 1 && !props.and && !props.or) throw new Error('must specify "and" or "or" operator.')
   for (const label of labels) {
     if (props.or) { // <When screen-xs or screen-md>
-      if (When.case(label)) break
+      if (When.case(label)) return props.children || null
     } else { // <When login-user and screen-md>
       if (!When.case(label)) return null
     }
   }
+  if (props.or) return null
   return props.children || null
 }
 

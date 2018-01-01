@@ -33,4 +33,42 @@ describe('When component', () => {
       expect(tree).toBe(null)
     })
   })
+
+  describe('"and" conditions', () => {
+    it('return children when match', () => {
+      const windowWidth = 800
+      When.case('screen-xs', () => windowWidth < 768)
+      When.case('screen-md', () => windowWidth >= 768 && windowWidth < 992)
+      When.case('screen-lg', () => windowWidth >= 992)
+      const tree = renderer
+            .create(<When login-user and screen-md><p>hello login user</p></When>)
+            .toJSON()
+      expect(tree.type).toBe('p')
+      expect(tree.children).toEqual(['hello login user'])
+    })
+
+    it('return null when not match', () => {
+      const tree = renderer
+            .create(<When login-user and admin-user><a href='./settings'>settings page</a></When>)
+            .toJSON()
+      expect(tree).toBe(null)
+    })
+  })
+
+  describe('"or" conditions', () => {
+    it('return children when match', () => {
+      const tree = renderer
+            .create(<When screen-md or screen-lg>large screen</When>)
+            .toJSON()
+      expect(tree).toBe('large screen')
+    })
+
+    it('return null when not match', () => {
+      const tree = renderer
+            .create(<When screen-xs or screen-lg>not medium screen</When>)
+            .toJSON()
+      console.log(tree)
+      expect(tree).toBe(null)
+    })
+  })
 })
