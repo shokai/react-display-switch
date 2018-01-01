@@ -1,0 +1,14 @@
+machine:
+  node:
+    version: 9.3.0
+  post:
+    - node -v
+    - npm -v
+
+dependencies:
+  override:
+    - npm install
+
+test:
+  override:
+    - npm run test:standard
