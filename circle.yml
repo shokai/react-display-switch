@@ -11,4 +11,6 @@ dependencies:
 
 test:
   override:
+    - npm run build
+    - npm run test:jest
     - npm run test:standard

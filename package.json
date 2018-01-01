@@ -7,7 +7,9 @@
     "build": "run-s build:*",
     "build:babel": "babel src/ --out-dir lib/ --minified --source-maps inline",
     "build:sample": "browserify --verbose -t babelify sample/index.js -o sample/index.bundle.js",
+    "pretest": "npm run build",
     "test": "run-s test:*",
+    "test:jest": "jest",
     "test:standard": "standard"
   },
   "keywords": [
@@ -23,10 +25,17 @@
     "babel-preset-react": "^6.24.1",
     "babelify": "^8.0.0",
     "browserify": "^14.5.0",
+    "jest": "^22.0.4",
     "npm-run-all": "^4.1.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-test-renderer": "^16.2.0",
     "standard": "^10.0.3"
+  },
+  "jest": {
+    "testMatch": [
+      "**/test/*.js"
+    ]
   },
   "standard": {
     "ignore": [
