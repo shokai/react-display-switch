@@ -9,7 +9,7 @@ React Components for improving readability by eliminating { }, && and ternary op
 
 ## Usage
 
-### register conditions
+register conditions
 
 ```js
 import {When} from 'react-display-switch'
@@ -21,7 +21,7 @@ When.case('admin-user', () => user.admin)
 When.case('enable-google-analytics', () => ENABLE_GOOGLE_ANALYTICS)
 ```
 
-### `<When condition>`
+`<When condition>`
 
 ```js
 <When screen-xs>contents for small screen</When>
