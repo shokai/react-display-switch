@@ -45,7 +45,6 @@ When.case('enable-google-analytics', () => process.env.ENABLE_GOOGLE_ANALYTICS)
 
 ```js
 import {When, WhenNot} from 'react-display-switch'
-
 ```
 
 ```js
