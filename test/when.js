@@ -67,7 +67,6 @@ describe('When component', () => {
       const tree = renderer
             .create(<When screen-xs or screen-lg>not medium screen</When>)
             .toJSON()
-      console.log(tree)
       expect(tree).toBe(null)
     })
   })
