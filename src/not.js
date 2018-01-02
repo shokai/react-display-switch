@@ -8,9 +8,9 @@ export const WhenNot = (props) => {
     if (props.or) {
       if (When.case(label)) return null
     } else {
-      if (When.case(label)) return null
+      if (!When.case(label)) return props.children || null
     }
   }
   if (props.or) return props.children || null
-  return props.children || null
+  return null
 }

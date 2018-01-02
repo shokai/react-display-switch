@@ -27,4 +27,24 @@ describe('WhenNot component', () => {
       expect(tree).toBe(null)
     })
   })
+
+  describe('"and" conditions', () => {
+    it('return children when match', () => {
+      const windowWidth = 800
+      When.case('screen-xs', () => windowWidth < 768)
+      When.case('screen-md', () => windowWidth >= 768 && windowWidth < 992)
+      When.case('screen-lg', () => windowWidth >= 992)
+      const tree = renderer
+            .create(<WhenNot guest-user and screen-xs>hello guest</WhenNot>)
+            .toJSON()
+      expect(tree).toBe('hello guest')
+    })
+
+    it('return null when not match', () => {
+      const tree = renderer
+            .create(<WhenNot guest-user and screen-md>hello guest</WhenNot>)
+            .toJSON()
+      expect(tree).toBe(null)
+    })
+  })
 })
