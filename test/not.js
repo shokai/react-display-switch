@@ -47,4 +47,20 @@ describe('WhenNot component', () => {
       expect(tree).toBe(null)
     })
   })
+
+  describe('"or" conditions', () => {
+    it('return children when match', () => {
+      const tree = renderer
+            .create(<WhenNot screen-xs or screen-lg>medium screen</WhenNot>)
+            .toJSON()
+      expect(tree).toBe('medium screen')
+    })
+
+    it('return null when not match', () => {
+      const tree = renderer
+            .create(<WhenNot screen-xs or screen-md>large screen</WhenNot>)
+            .toJSON()
+      expect(tree).toBe(null)
+    })
+  })
 })
