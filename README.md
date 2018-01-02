@@ -9,7 +9,7 @@ React Components for improving readability by eliminating { }, && and ternary op
 
 ## Usage
 
-When condition
+### When
 
 ```js
 <When screen-xs>contents for small screen</When>
@@ -29,7 +29,7 @@ and
 </When>
 ```
 
-### register conditions
+register conditions
 
 ```js
 import {When} from 'react-display-switch'
@@ -40,6 +40,18 @@ When.case('screen-lg', () => window.innerWidth >= 992)
 When.case('admin-user', () => user.admin === true)
 When.case('enable-google-analytics', () => process.env.ENABLE_GOOGLE_ANALYTICS)
 ```
+
+### WhenNot
+
+```js
+import {When, WhenNot} from 'react-display-switch'
+
+```
+
+```js
+<WhenNot login-user><a href='/login'>please login</a></WhenNot>
+```
+
 
 ## Sample
 
