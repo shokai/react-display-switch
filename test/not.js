@@ -1,34 +1,28 @@
 /* eslint-env jest */
-
 import React from 'react'
 import renderer from 'react-test-renderer'
-import {When} from '../src/'
+import {When, WhenNot} from '../src/'
 
-describe('When component', () => {
+describe('WhenNot component', () => {
   it('should be a function', () => {
-    expect(When).toBeInstanceOf(Function)
-  })
-
-  describe('case', () => {
-    it('register conditions', () => {
-      When.case('login-user', () => true) // register
-      expect(When.case('login-user')).toBe(true)
-    })
+    expect(WhenNot).toBeInstanceOf(Function)
   })
 
   describe('simple condition case', () => {
+    When.case('login-user', () => false)
+    When.case('guest-user', () => true)
+
     it('return children when match', () => {
       const tree = renderer
-            .create(<When login-user><a href='./profile'>profile page</a></When>)
+            .create(<WhenNot login-user><a href='/login'>login</a></WhenNot>)
             .toJSON()
       expect(tree.type).toBe('a')
-      expect(tree.props.href).toBe('./profile')
+      expect(tree.props.href).toBe('/login')
     })
 
     it('return null when not match', () => {
-      When.case('admin-user', () => false)
       const tree = renderer
-            .create(<When admin-user><a href='./settings'>settings page</a></When>)
+            .create(<WhenNot guest-user>hello guest</WhenNot>)
             .toJSON()
       expect(tree).toBe(null)
     })
@@ -41,15 +35,14 @@ describe('When component', () => {
       When.case('screen-md', () => windowWidth >= 768 && windowWidth < 992)
       When.case('screen-lg', () => windowWidth >= 992)
       const tree = renderer
-            .create(<When login-user and screen-md><p>hello login user</p></When>)
+            .create(<WhenNot guest-user and screen-xs>hello guest</WhenNot>)
             .toJSON()
-      expect(tree.type).toBe('p')
-      expect(tree.children).toEqual(['hello login user'])
+      expect(tree).toBe('hello guest')
     })
 
     it('return null when not match', () => {
       const tree = renderer
-            .create(<When login-user and admin-user><a href='./settings'>settings page</a></When>)
+            .create(<WhenNot guest-user and screen-md>hello guest</WhenNot>)
             .toJSON()
       expect(tree).toBe(null)
     })
@@ -58,16 +51,15 @@ describe('When component', () => {
   describe('"or" conditions', () => {
     it('return children when match', () => {
       const tree = renderer
-            .create(<When screen-md or screen-lg>large screen</When>)
+            .create(<WhenNot screen-xs or screen-lg>medium screen</WhenNot>)
             .toJSON()
-      expect(tree).toBe('large screen')
+      expect(tree).toBe('medium screen')
     })
 
     it('return null when not match', () => {
       const tree = renderer
-            .create(<When screen-xs or screen-lg>not medium screen</When>)
+            .create(<WhenNot screen-xs or screen-md>large screen</WhenNot>)
             .toJSON()
-      console.log(tree)
       expect(tree).toBe(null)
     })
   })
