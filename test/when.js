@@ -11,8 +11,8 @@ describe('When component', () => {
 
   describe('case', () => {
     it('register conditions', () => {
-      When.case('login-user', () => true) // register
-      expect(When.case('login-user')).toBe(true)
+      When.case('login_user', () => true) // register
+      expect(When.case('login_user')).toBe(true)
     })
 
     it('return condition at register', () => {
@@ -25,16 +25,16 @@ describe('When component', () => {
   describe('simple condition case', () => {
     it('return children when match', () => {
       const tree = renderer
-            .create(<When login-user><a href='./profile'>profile page</a></When>)
+            .create(<When login_user><a href='./profile'>profile page</a></When>)
             .toJSON()
       expect(tree.type).toBe('a')
       expect(tree.props.href).toBe('./profile')
     })
 
     it('return null when not match', () => {
-      When.case('admin-user', () => false)
+      When.case('admin_user', () => false)
       const tree = renderer
-            .create(<When admin-user><a href='./settings'>settings page</a></When>)
+            .create(<When admin_user><a href='./settings'>settings page</a></When>)
             .toJSON()
       expect(tree).toBe(null)
     })
@@ -43,11 +43,11 @@ describe('When component', () => {
   describe('"and" conditions', () => {
     it('return children when match', () => {
       const windowWidth = 800
-      When.case('screen-xs', () => windowWidth < 768)
-      When.case('screen-md', () => windowWidth >= 768 && windowWidth < 992)
-      When.case('screen-lg', () => windowWidth >= 992)
+      When.case('screen_xs', () => windowWidth < 768)
+      When.case('screen_md', () => windowWidth >= 768 && windowWidth < 992)
+      When.case('screen_lg', () => windowWidth >= 992)
       const tree = renderer
-            .create(<When login-user and screen-md><p>hello login user</p></When>)
+            .create(<When login_user and screen_md><p>hello login user</p></When>)
             .toJSON()
       expect(tree.type).toBe('p')
       expect(tree.children).toEqual(['hello login user'])
@@ -55,7 +55,7 @@ describe('When component', () => {
 
     it('return null when not match', () => {
       const tree = renderer
-            .create(<When login-user and admin-user><a href='./settings'>settings page</a></When>)
+            .create(<When login_user and admin_user><a href='./settings'>settings page</a></When>)
             .toJSON()
       expect(tree).toBe(null)
     })
@@ -64,14 +64,14 @@ describe('When component', () => {
   describe('"or" conditions', () => {
     it('return children when match', () => {
       const tree = renderer
-            .create(<When screen-md or screen-lg>large screen</When>)
+            .create(<When screen_md or screen_lg>large screen</When>)
             .toJSON()
       expect(tree).toBe('large screen')
     })
 
     it('return null when not match', () => {
       const tree = renderer
-            .create(<When screen-xs or screen-lg>not medium screen</When>)
+            .create(<When screen_xs or screen_lg>not medium screen</When>)
             .toJSON()
       expect(tree).toBe(null)
     })
