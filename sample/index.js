@@ -9,25 +9,25 @@ const user = {
   admin: true
 }
 
-When.case('screen-xs', () => window.innerWidth < 768)
-When.case('screen-md', () => !When.case('screen-xs') && window.innerWidth < 992)
-When.case('screen-lg', () => window.innerWidth >= 992)
-When.case('admin-user', () => user.admin)
-When.case('enable-google-analytics', () => ENABLE_GOOGLE_ANALYTICS)
+When.case('screen_xs', () => window.innerWidth < 768)
+When.case('screen_md', () => !When.case('screen_xs') && window.innerWidth < 992)
+When.case('screen_lg', () => window.innerWidth >= 992)
+When.case('admin_user', () => user.admin)
+When.case('enable_google_analytics', () => ENABLE_GOOGLE_ANALYTICS)
 
 const App = () => (
   <div>
     <h1>react-display-switch</h1>
     <p>
-      <When screen-xs>contents for small screen</When>
-      <When screen-md or screen-lg>contents for medium or large screen</When>
+      <When screen_xs>contents for small screen</When>
+      <When screen_md or screen_lg>contents for medium or large screen</When>
     </p>
-    <When admin-user and enable-google-analytics>
+    <When admin_user and enable_google_analytics>
       <p>
         <a href='./google-analytics-settings'>google analytics settings</a>
       </p>
     </When>
-    <When enable-google-analytics>
+    <When enable_google_analytics>
       <p>google analytics setup code js</p>
     </When>
   </div>
