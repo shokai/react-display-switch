@@ -12,19 +12,19 @@ React Components for improving readability by eliminating { }, && and ternary op
 ### When
 
 ```js
-<When screen-xs>contents for small screen</When>
+<When screen_xs>contents for small screen</When>
 ```
 
 or
 
 ```js
-<When screen-md or screen-lg>contents for medium or large screen</When>
+<When screen_md or screen_lg>contents for medium or large screen</When>
 ```
 
 and
 
 ```js
-<When admin-user and enable-google-analytics>
+<When admin_user and enable_google_analytics>
   <a href='./google-analytics-settings'>google analytics settings</a>
 </When>
 ```
@@ -34,11 +34,11 @@ register conditions
 ```js
 import {When} from 'react-display-switch'
 
-When.case('screen-xs', () => window.innerWidth < 768)
-When.case('screen-md', () => !When.case('screen-xs') && window.innerWidth < 992)
-When.case('screen-lg', () => window.innerWidth >= 992)
-When.case('admin-user', () => user.admin === true)
-When.case('enable-google-analytics', () => process.env.ENABLE_GOOGLE_ANALYTICS)
+When.case('screen_xs', () => window.innerWidth < 768)
+When.case('screen_md', () => !When.case('screen_xs') && window.innerWidth < 992)
+When.case('screen_lg', () => window.innerWidth >= 992)
+When.case('admin_user', () => user.admin === true)
+When.case('enable_google_analytics', () => process.env.ENABLE_GOOGLE_ANALYTICS)
 ```
 
 ### WhenNot
@@ -48,7 +48,7 @@ import {When, WhenNot} from 'react-display-switch'
 ```
 
 ```js
-<WhenNot login-user><a href='/login'>please login</a></WhenNot>
+<WhenNot login_user><a href='/login'>please login</a></WhenNot>
 ```
 
 

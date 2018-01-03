@@ -6,9 +6,9 @@ export const When = (props) => {
   const labels = filterCaseLabel(Object.keys(props))
   if (labels.length > 1 && !props.and && !props.or) throw new Error('must specify "and" or "or" operator.')
   for (const label of labels) {
-    if (props.or) { // <When screen-xs or screen-md>
+    if (props.or) { // <When screen_xs or screen_md>
       if (When.case(label)) return props.children || null
-    } else { // <When login-user and screen-md>
+    } else { // <When login_user and screen_md>
       if (!When.case(label)) return null
     }
   }
