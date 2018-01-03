@@ -14,6 +14,12 @@ describe('When component', () => {
       When.case('login-user', () => true) // register
       expect(When.case('login-user')).toBe(true)
     })
+
+    it('return condition at register', () => {
+      const func = () => 'func'
+      const func2 = When.case('func', func)
+      expect(func).toBe(func2)
+    })
   })
 
   describe('simple condition case', () => {
