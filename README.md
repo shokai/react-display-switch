@@ -1,5 +1,5 @@
 # react-display-switch
-React Components for improving readability by eliminating { }, && and ternary operators out of JSX
+Declarative React Components for improving readability by eliminating { }, && and ternary operators out of JSX
 
 - https://github.com/shokai/react-display-switch
 - https://npmjs.com/package/react-display-switch
