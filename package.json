@@ -1,7 +1,7 @@
 {
   "name": "react-display-switch",
   "version": "0.3.0",
-  "description": "React Components for improving readability by eliminating { }, && and ternary operators out of JSX",
+  "description": "Declarative React Components for improving readability by eliminating { }, && and ternary operators out of JSX",
   "main": "lib/index.js",
   "scripts": {
     "build": "run-s build:*",
@@ -14,7 +14,9 @@
   },
   "keywords": [
     "react",
-    "jsx"
+    "jsx",
+    "declarative",
+    "switch"
   ],
   "author": "Sho Hashimoto <hashimoto@shokai.org>",
   "license": "MIT",
