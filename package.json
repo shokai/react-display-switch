@@ -26,13 +26,13 @@
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babelify": "^8.0.0",
-    "browserify": "^14.5.0",
-    "jest": "^22.0.4",
+    "browserify": "^16.1.1",
+    "jest": "^22.4.3",
     "npm-run-all": "^4.1.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-test-renderer": "^16.2.0",
-    "standard": "^10.0.3"
+    "standard": "^11.0.1"
   },
   "jest": {
     "testMatch": [
