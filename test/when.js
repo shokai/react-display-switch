@@ -13,6 +13,7 @@ describe('When component', () => {
     it('register conditions', () => {
       When.case('login_user', () => true) // register
       expect(When.case('login_user')).toBe(true)
+      expect(When.login_user).toBe(true) // shorthand
     })
 
     it('return condition at register', () => {
