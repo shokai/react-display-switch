@@ -35,7 +35,7 @@ register conditions
 import {When} from 'react-display-switch'
 
 When.case('screen_xs', () => window.innerWidth < 768)
-When.case('screen_md', () => !When.case('screen_xs') && window.innerWidth < 992)
+When.case('screen_md', () => !When.screen_xs && window.innerWidth < 992)
 When.case('screen_lg', () => window.innerWidth >= 992)
 When.case('admin_user', () => user.admin === true)
 When.case('enable_google_analytics', () => process.env.ENABLE_GOOGLE_ANALYTICS)

@@ -10,7 +10,7 @@ const user = {
 }
 
 When.case('screen_xs', () => window.innerWidth < 768)
-When.case('screen_md', () => !When.case('screen_xs') && window.innerWidth < 992)
+When.case('screen_md', () => !When.screen_xs && window.innerWidth < 992)
 When.case('screen_lg', () => window.innerWidth >= 992)
 When.case('admin_user', () => user.admin)
 When.case('enable_google_analytics', () => ENABLE_GOOGLE_ANALYTICS)
