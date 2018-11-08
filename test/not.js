@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import React from 'react'
 import renderer from 'react-test-renderer'
-import {When, WhenNot} from '../src/'
+import { When, WhenNot } from '../src/'
 
 describe('WhenNot component', () => {
   it('should be a function', () => {

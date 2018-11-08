@@ -22,7 +22,7 @@ When.case = (label, condition) => {
     if (typeof condition !== 'function') throw new Error(`condition must be a function.`)
     if (When.cases[label]) throw new Error(`label "${label}" is already registerd.`)
     When.cases[label] = condition
-    Object.defineProperty(When, label, {get: condition})
+    Object.defineProperty(When, label, { get: condition })
     return condition
   }
   if (typeof When.cases[label] !== 'function') throw new Error(`label "${label}" is not registerd.`)

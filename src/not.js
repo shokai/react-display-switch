@@ -1,4 +1,4 @@
-import {When, filterCaseLabel} from './when'
+import { When, filterCaseLabel } from './when'
 
 export const WhenNot = (props) => {
   if (props.and && props.or) throw new Error('must not use "and" with "or".')

@@ -26,6 +26,8 @@
     "@babel/preset-env": "^7.1.5",
     "@babel/preset-react": "^7.0.0",
     "babelify": "^10.0.0",
+    "babel-core": "^7.0.0-bridge",
+    "babel-jest": "23.6.0",
     "browserify": "^16.2.3",
     "jest": "^23.6.0",
     "npm-run-all": "^4.1.2",

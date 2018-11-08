@@ -1,6 +1,6 @@
 import React from 'react'
-import {render} from 'react-dom'
-import {When} from '../'
+import { render } from 'react-dom'
+import { When } from '../'
 // import {When} from 'react-display-switch'
 
 const ENABLE_GOOGLE_ANALYTICS = true

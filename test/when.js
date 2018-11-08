@@ -2,7 +2,7 @@
 
 import React from 'react'
 import renderer from 'react-test-renderer'
-import {When} from '../src/'
+import { When } from '../src/'
 
 describe('When component', () => {
   it('should be a function', () => {
