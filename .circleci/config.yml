@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:11.1.0
+    working_directory: ~/app
+    steps:
+      - run: 'node -v'
+      - run: 'npm -v'
+      - checkout
+      - run: 'npm ci'
+      - run: 'npm run build'
+      - run: 'npm run test:jest'
+      - run: 'npm run test:standard'
