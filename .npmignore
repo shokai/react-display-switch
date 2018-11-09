@@ -2,7 +2,7 @@ src/
 test/
 sample/
 tmp/
-circle.yml
+.circle/
 .babelrc
 package-lock.json
 *.log
