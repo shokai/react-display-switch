@@ -1,6 +1,6 @@
 {
   "name": "react-display-switch",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Declarative React Components for improving readability by eliminating { }, && and ternary operators out of JSX",
   "main": "lib/index.js",
   "scripts": {
